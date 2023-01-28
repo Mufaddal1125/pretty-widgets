@@ -4,13 +4,16 @@ Pretty Widgets.
 
 # Getting started with the Pretty Widgets
 
-This package is designed to help reduce boilerplate code in your Flutter projects by providing a set of extensions that can be used to simplify common tasks.
+This package is designed to help reduce boilerplate code in your Flutter projects by providing a set of extensions that can be used to simplify common widget hierarchy.
 
 ## Installation
 
 To install the package, add the following to your `pubspec.yaml`
 
-`dependencies:   pretty_widgets: <latest version>`
+```yaml
+dependencies:   
+    pretty_widgets: <latest version>
+```
 
 Then run `flutter pub get` to get the package installed.
 
