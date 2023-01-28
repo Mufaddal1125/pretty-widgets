@@ -27,7 +27,7 @@ import 'package:pretty_widgets/pretty_widgets.dart';
 
 The package includes extensions for common widgets like `Text`, `Padding`, that can be used to simplify the code and reduce the number of lines.
 
-For example, you can use the `Text('Hii').center()` extension to simplify the code for centering a `Text` witch color widget:
+For example, you can use the `Text('Hii').center()` extension to simplify the code for centering a `Text` wich color widget:
 
 ```dart
 // boilerplate
