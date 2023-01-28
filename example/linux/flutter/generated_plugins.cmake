@@ -3,7 +3,6 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  pretty_widgets
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
