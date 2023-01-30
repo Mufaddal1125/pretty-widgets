@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 extension WidgetExtension on Widget {
   Widget useMaterial3() {
@@ -98,6 +99,82 @@ extension WidgetExtension on Widget {
         ],
         icon: this,
       ),
+    );
+  }
+
+  Widget margin([EdgeInsets? margin]) {
+    return Container(
+      margin: margin ?? const EdgeInsets.all(8.0),
+      child: this,
+    );
+  }
+
+  Widget marginAll(double margin) {
+    return Container(
+      margin: EdgeInsets.all(margin),
+      child: this,
+    );
+  }
+
+  Widget marginSymmetric({double vertical = 0, double horizontal = 0}) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: vertical, horizontal: horizontal),
+      child: this,
+    );
+  }
+
+  Widget marginOnly({
+    double left = 0,
+    double top = 0,
+    double right = 0,
+    double bottom = 0,
+  }) {
+    return Container(
+      margin:
+          EdgeInsets.only(left: left, top: top, right: right, bottom: bottom),
+      child: this,
+    );
+  }
+
+  Widget onTap(VoidCallback onTap) {
+    return InkWell(
+      onTap: onTap,
+      child: this,
+    );
+  }
+
+  Widget onLongPress(VoidCallback onLongPress) {
+    return InkWell(
+      onLongPress: onLongPress,
+      child: this,
+    );
+  }
+
+  Widget onDoubleTap(VoidCallback onDoubleTap) {
+    return InkWell(
+      onDoubleTap: onDoubleTap,
+      child: this,
+    );
+  }
+
+  Widget onHover(Function(PointerHoverEvent) onHover) {
+    return MouseRegion(
+      onHover: onHover,
+      child: this,
+    );
+  }
+
+  Widget onEnter(Function(PointerEnterEvent) onEnter) {
+    return MouseRegion(
+      onEnter: onEnter,
+      child: this,
+    );
+  }
+
+  Widget onExit(Function(PointerExitEvent) onExit) {
+    return MouseRegion(
+      onExit: onExit,
+      child: this,
     );
   }
 }

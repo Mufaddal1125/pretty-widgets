@@ -195,7 +195,7 @@ extension TextWidgetExtension on Text {
     );
   }
 
-  Text copyStyle({
+  Text withStyle({
     bool? inherit,
     Color? color,
     Color? backgroundColor,
