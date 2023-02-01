@@ -6,99 +6,85 @@ extension TextWidgetExtension on Text {
   TextStyle get style => this.style ?? const TextStyle();
 
   Text color(Color color) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(color: color),
     );
   }
 
   Text size(double size) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(fontSize: size),
     );
   }
 
   Text weight(FontWeight weight) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(fontWeight: weight),
     );
   }
 
   Text italic() {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(fontStyle: FontStyle.italic),
     );
   }
 
   Text bold() {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(fontWeight: FontWeight.bold),
     );
   }
 
   Text underline() {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(decoration: TextDecoration.underline),
     );
   }
 
   Text lineThrough() {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(decoration: TextDecoration.lineThrough),
     );
   }
 
   Text overline() {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(decoration: TextDecoration.overline),
     );
   }
 
   Text letterSpacing(double spacing) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(letterSpacing: spacing),
     );
   }
 
   Text wordSpacing(double spacing) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(wordSpacing: spacing),
     );
   }
 
   Text height(double height) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(height: height),
     );
   }
 
   Text background(Color color) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(background: Paint()..color = color),
     );
   }
 
   Text foreground(Color color) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(foreground: Paint()..color = color),
     );
   }
 
   Text shadow(Color color, {Offset offset = Offset.zero, double blur = 0}) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(
         shadows: [
           Shadow(
@@ -112,86 +98,14 @@ extension TextWidgetExtension on Text {
   }
 
   Text shadows(List<Shadow> shadows) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(shadows: shadows),
     );
   }
 
   Text font(String font) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(fontFamily: font),
-    );
-  }
-
-  Text align(TextAlign align) {
-    return Text(
-      data!,
-      textAlign: align,
-    );
-  }
-
-  Text maxLines(int maxLines) {
-    return Text(
-      data!,
-      maxLines: maxLines,
-    );
-  }
-
-  Text overflow(TextOverflow overflow) {
-    return Text(
-      data!,
-      overflow: overflow,
-    );
-  }
-
-  Text softWrap(bool softWrap) {
-    return Text(
-      data!,
-      softWrap: softWrap,
-    );
-  }
-
-  Text textScaleFactor(double textScaleFactor) {
-    return Text(
-      data!,
-      textScaleFactor: textScaleFactor,
-    );
-  }
-
-  Text textWidthBasis(TextWidthBasis textWidthBasis) {
-    return Text(
-      data!,
-      textWidthBasis: textWidthBasis,
-    );
-  }
-
-  Text textDirection(TextDirection textDirection) {
-    return Text(
-      data!,
-      textDirection: textDirection,
-    );
-  }
-
-  Text locale(Locale locale) {
-    return Text(
-      data!,
-      locale: locale,
-    );
-  }
-
-  Text strutStyle(StrutStyle strutStyle) {
-    return Text(
-      data!,
-      strutStyle: strutStyle,
-    );
-  }
-
-  Text textHeightBehavior(TextHeightBehavior textHeightBehavior) {
-    return Text(
-      data!,
-      textHeightBehavior: textHeightBehavior,
     );
   }
 
@@ -223,8 +137,7 @@ extension TextWidgetExtension on Text {
     String? package,
     TextOverflow? overflow,
   }) {
-    return Text(
-      data!,
+    return copyWith(
       style: style.copyWith(
         color: color,
         fontSize: fontSize,
@@ -252,6 +165,42 @@ extension TextWidgetExtension on Text {
         package: package,
         overflow: overflow,
       ),
+    );
+  }
+
+  Text copyWith({
+    Key? key,
+    String? data,
+    Locale? locale,
+    int? maxLines,
+    TextOverflow? overflow,
+    bool? softWrap,
+    StrutStyle? strutStyle,
+    TextAlign? textAlign,
+    TextDirection? textDirection,
+    double? textScaleFactor,
+    TextWidthBasis? textWidthBasis,
+    Color? selectionColor,
+    String? semanticsLabel,
+    TextHeightBehavior? textHeightBehavior,
+    TextStyle? style,
+  }) {
+    return Text(
+      key: key ?? this.key,
+      data ?? this.data ?? '',
+      locale: locale ?? this.locale,
+      maxLines: maxLines ?? this.maxLines,
+      overflow: overflow ?? this.overflow,
+      softWrap: softWrap ?? this.softWrap,
+      strutStyle: strutStyle ?? this.strutStyle,
+      textAlign: textAlign ?? this.textAlign,
+      textDirection: textDirection ?? this.textDirection,
+      textScaleFactor: textScaleFactor ?? this.textScaleFactor,
+      textWidthBasis: textWidthBasis ?? this.textWidthBasis,
+      selectionColor: selectionColor ?? this.selectionColor,
+      semanticsLabel: semanticsLabel ?? this.semanticsLabel,
+      textHeightBehavior: textHeightBehavior ?? this.textHeightBehavior,
+      style: style ?? this.style,
     );
   }
 }

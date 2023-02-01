@@ -1,3 +1,11 @@
+## 0.0.3 - 2023-02-01
+### Added
+- BuildContext extensions
+- Inkwell and mouse event methods
+
+### Fixed
+- text extension widget does not inherit styles
+
 ## 0.0.2 - 2023-01-30
 ### Added
 - Future extension with Future builder
