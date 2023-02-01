@@ -1,3 +1,10 @@
+## 0.0.4 - 2023-02-01
+### Added
+- option to use widget as child of popup menu
+
+### Fixed
+- context menu extensions not exported
+
 ## 0.0.3 - 2023-02-01
 ### Added
 - BuildContext extensions

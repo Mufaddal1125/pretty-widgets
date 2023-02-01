@@ -85,7 +85,13 @@ extension WidgetExtension on Widget {
     );
   }
 
-  Widget popupMenu(Widget menu) {
+  Widget popupMenu(
+    Widget menu,
+    void Function(dynamic)? onSelected,
+    void Function()? onCancelled, {
+    /// If true, the widget will be the child of popup menu button.
+    bool asChild = false,
+  }) {
     return Theme(
       data: ThemeData(disabledColor: Colors.transparent),
       child: PopupMenuButton(
@@ -98,7 +104,10 @@ extension WidgetExtension on Widget {
             ),
           )
         ],
-        icon: this,
+        icon: !asChild ? this : null,
+        onCanceled: onCancelled,
+        onSelected: onSelected,
+        child: asChild ? this : null,
       ),
     );
   }
