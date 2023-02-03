@@ -11,12 +11,16 @@ extension FutureExtension<T> on Future<T?> {
       key: key,
       future: this,
       builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return builder(context, snapshot.data);
-        } else if (snapshot.hasError) {
-          return error ?? const SizedBox.shrink();
-        } else {
-          return loading ?? const SizedBox.shrink();
+        switch (snapshot.connectionState) {
+          case ConnectionState.none:
+          case ConnectionState.waiting:
+            return loading ?? const SizedBox.shrink();
+          case ConnectionState.active:
+          case ConnectionState.done:
+            if (snapshot.hasError) {
+              return error ?? const SizedBox.shrink();
+            }
+            return builder(context, snapshot.data);
         }
       },
     );

@@ -1,3 +1,7 @@
+## 0.0.5 - 2023-02-03
+### Fixed
+- future builder does not work with void futures
+
 ## 0.0.4 - 2023-02-01
 ### Added
 - option to use widget as child of popup menu
