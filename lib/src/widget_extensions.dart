@@ -86,9 +86,9 @@ extension WidgetExtension on Widget {
   }
 
   Widget popupMenu(
-    Widget menu,
+    Widget menu, {
     void Function(dynamic)? onSelected,
-    void Function()? onCancelled, {
+    void Function()? onCancelled,
     /// If true, the widget will be the child of popup menu button.
     bool asChild = false,
   }) {

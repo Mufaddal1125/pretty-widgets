@@ -1,3 +1,7 @@
+## Unreleased
+### Changed
+- make onSelected, onCancelled optional
+
 ## 0.0.5 - 2023-02-03
 ### Fixed
 - future builder does not work with void futures
