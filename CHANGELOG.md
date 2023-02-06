@@ -1,3 +1,7 @@
+## 0.0.7 - 2023-02-06
+### Changed
+- don't wrap popup menu in theme data
+
 ## 0.0.6 - 2023-02-06
 ### Changed
 - make onSelected, onCancelled optional

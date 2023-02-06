@@ -91,24 +91,19 @@ extension WidgetExtension on Widget {
     void Function()? onCancelled,
     /// If true, the widget will be the child of popup menu button.
     bool asChild = false,
+    bool enabled = true,
   }) {
-    return Theme(
-      data: ThemeData(disabledColor: Colors.transparent),
-      child: PopupMenuButton(
-        itemBuilder: (context) => [
-          PopupMenuItem(
-            enabled: false,
-            child: Theme(
-              data: ThemeData(disabledColor: Colors.grey),
-              child: menu,
-            ),
-          )
-        ],
-        icon: !asChild ? this : null,
-        onCanceled: onCancelled,
-        onSelected: onSelected,
-        child: asChild ? this : null,
-      ),
+    return PopupMenuButton(
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          enabled: enabled,
+          child: menu,
+        )
+      ],
+      icon: !asChild ? this : null,
+      onCanceled: onCancelled,
+      onSelected: onSelected,
+      child: asChild ? this : null,
     );
   }
 
