@@ -1,4 +1,4 @@
-## Unreleased
+## 0.0.6 - 2023-02-06
 ### Changed
 - make onSelected, onCancelled optional
 
