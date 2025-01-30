@@ -1,3 +1,13 @@
+## 1.0.0 - 2025-01-30
+### Added
+- Add new extensions for State and Widgets
+
+### Changed
+- remove use of deprecated properties and mark them as deprecated
+
+### Fixed
+- Future.builder rebuilding
+
 ## 0.0.7 - 2023-02-06
 ### Changed
 - don't wrap popup menu in theme data
