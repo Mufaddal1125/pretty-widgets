@@ -90,6 +90,7 @@ extension WidgetExtension on Widget {
     Widget menu, {
     void Function(dynamic)? onSelected,
     void Function()? onCancelled,
+
     /// If true, the widget will be the child of popup menu button.
     bool asChild = false,
     bool enabled = true,
@@ -245,5 +246,9 @@ extension WidgetExtension on Widget {
       alignment: Alignment.bottomRight,
       child: this,
     );
+  }
+
+  Widget rotate([double angle = 0]) {
+    return Transform.rotate(angle: angle, child: this);
   }
 }
