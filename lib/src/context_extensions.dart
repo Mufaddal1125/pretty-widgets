@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 extension ContextExtension on BuildContext {
@@ -24,10 +23,16 @@ extension ContextExtension on BuildContext {
   bool get isXLarge => size.width >= 1280 && size.width < 1920;
   bool get isXXLarge => size.width >= 1920;
 
-  Color get primaryColor => theme.primaryColor;
+  Color get primaryColor => colorScheme.primary;
   Color get primaryColorDark => theme.primaryColorDark;
   Color get primaryColorLight => theme.primaryColorLight;
-  Color get backgroundColor => theme.colorScheme.background;
+  @Deprecated(
+    'Use surface instead. '
+    'This feature was deprecated after v3.18.0-0.1.pre.',
+  )
+  Color get backgroundColor => colorScheme.background;
+  Color get surface => colorScheme.surface;
+
   Color get scaffoldBackgroundColor => theme.scaffoldBackgroundColor;
   Color get canvasColor => theme.canvasColor;
   Color get cardColor => theme.cardColor;
