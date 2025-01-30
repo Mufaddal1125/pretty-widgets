@@ -85,6 +85,7 @@ extension WidgetExtension on Widget {
     );
   }
 
+  @Deprecated('Use [PopupMenuButton] instead.')
   Widget popupMenu(
     Widget menu, {
     void Function(dynamic)? onSelected,
@@ -98,7 +99,7 @@ extension WidgetExtension on Widget {
         PopupMenuItem(
           enabled: enabled,
           child: menu,
-        )
+        ),
       ],
       icon: !asChild ? this : null,
       onCanceled: onCancelled,
